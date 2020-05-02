@@ -3,3 +3,7 @@ test.txt
 hello git!
 
 Reajob lesson 200502
+
+エラー発生
+
+更新チェック
