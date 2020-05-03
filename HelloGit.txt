@@ -1,0 +1,76 @@
+ZN(SUM([死者合計])) - LOOKUP(ZN(SUM([死者合計])), -1)
+
+The OAuth proxy example is an example of how to create a WDC that uses OAuth 2.0 for authentication.
+
+ There are a few steps you need to follow to run the sample locally:
+
+ 1.  In this folder (OAuthProxyExample), run 'npm install'.
+
+ 2.  Create a developer app on foursquare's developer site (https://developer.foursquare.com/).
+        - Make note of the ClientId and ClientSecret for your app.
+ 3. Still on the foursquare developer site, configure your app by adding the following string
+    to the "Redirect URI(s)" field: "http://localhost:3333/redirect"
+
+    If you wish to run your application on another port or on a hosted site, you will need
+    to add further redirect URIs to this configuration.
+
+ 4. In config.js, replace 'YOUR_CLIENT_ID' and 'YOUR_CLIENT_SECRET' with the values from step 2.
+ 5. In public/foursquare.js, replace "YOUR_CLIENT_ID" with the value from step 2.
+ 6. Run 'npm start' from this folder.
+ 
+
+You will now have the sample WDC hosted at localhost:3333/index.html.  Enter that URL
+into the WDC simulator or into Tableau to use the connector.
+
+
+GitHubの使い方
+
+	https://github.com/yoshie-toru/HelloGit.git
+	https://github.com/yoshie-toru/HelloGit.git
+
+	基礎知識
+		Commit 登録　ローカルに一時的に登録する
+		local repository
+		remote repository
+		Index 変化を記録するファイル
+
+	まとめ
+		1）	ローカルリポジトリを作成する			$git init
+		2）	ローカルリポジトリにファイル
+			の変更点を追加（インデックスに追加）	$ git add ファイル名
+		3）	ローカルリポジトリにインデックス
+			に追加したファイルを登録				$ git commit -m "変更点などのコメント"
+		4）	追加したインデックス
+			（ファイルの変更点など）をGitHubに作成	$ git remote add origin リポジトリのURI
+		5）	ローカルリポジトリのファイル
+			をGitHubのリポジトリに送信				$ git push origin master
+
+			勝利にコミットせよ！
+			勝利に，ローカルリポジトリにデータを追加せよ！
+			うん，やっぱり意味わかりませんね．
+
+	ブランチ（枝）とは？
+		1）	新しいブランチを作る				$ git branch ブランチ名
+		2）	今あるブランチを確認する			$ git branch
+		3）	ブランチを移動する					$ git checkout ブランチ名
+		4）	ブランチを結合（マージ）する		$ git checkoutで，結合したいブランチに移動して…
+												$ git merge 取り込むブランチ名
+		で，「ブランチを切る」ってどのことですか…？		
+
+	コマンド集
+		基本
+		・	ブランチ情報チェック
+			(自分のいるブランチ、変更ファイル)	$ git status
+		・	ワークツリーからインデックスに追加	$ git add -p 追加するものを選択
+												$ git add -A すべて追加
+		・	差分チェック
+			-インデックスとワークツリーの差分
+			 (addする前の差分)					$ git diff 	
+			-インデックスと最新コミット
+			 (addしてからの差分)				$ git diff --cached　
+			-ワークツリーと最新コミット			$ git diff HEAD　
+		・	commit
+			-インデックスへadd,commit
+			 (git add -u -> git commitと同等)	$ git commit -a  
+			-verbose							$ git commit -v   
+			-直前のコミットをやり直す			$ git commit --amend 
